@@ -2,6 +2,11 @@ jasypt:
   encryptor:
     password: liuweijw
 
+server:
+  tomcat:
+    max-threads: 500
+    min-spare-threads: 50
+
 spring:
   redis:
     remote: true        #是否是开启缓存
@@ -22,8 +27,8 @@ ribbon:
     enable: false
   OkHttp:
     enable: true
-  ReadTimeout: 30000
-  ConnectTimeout: 30000
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
   
 feign:
   hystrix:
@@ -32,7 +37,25 @@ feign:
     enable: true
   httpclient:
     enable: false
-    
+  client:
+    config:
+      feignName:
+        connectTimeout: 30000
+        readTimeout: 30000
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 500
+      maxQueueSize: 1000
+      queueSizeRejectionThreshold: 800
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+               
 management:
   security:
     enabled: false
