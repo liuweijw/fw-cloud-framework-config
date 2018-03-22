@@ -15,6 +15,10 @@ spring:
       percentage: 1.0
 
 zuul:
+  ribbon:
+    eager-load:
+      enabled: true #开启Ribbon的饥饿加载模式
+      clients: system-auth-server,business-admin-server #指定需要饥饿加载的客户端名称、服务名
   ignoredServices: '*'
   host:
     connect-timeout-millis: 30000
@@ -31,9 +35,9 @@ zuul:
       stripPrefix: true
       sensitiveHeaders:
   ratelimit:
-    key-prefix: business-ratelimite 
-    enabled: true 
-    repository: REDIS 
+    key-prefix: business-ratelimite
+    enabled: true
+    repository: REDIS
     behind-proxy: true
     policies:
       business-admin-server:
@@ -80,6 +84,6 @@ urls:
     - /*/v2/api-docs
     - /swagger/api-docs
     - /webjars/**
-       
+
 logging:
   config: classpath:logback.xml
