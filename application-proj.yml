@@ -11,7 +11,7 @@ spring:
   redis:
     remote: true        #是否是开启缓存
     host: ENC(U86eYRZZD97vmgeakA91mgEnjyDcf//8)
-    port: ENC(gUDZlAUuGtc38bq8XEjb8Q==)
+    port: 6379
     password: ENC(PTeXGrRsjpGNJraZDhcQL16hs6lucVuMrpSnm0nMknkziK0hJAuhmePOQ4WixafhCaqhRjWwIsA=)
   http:
     multipart:
