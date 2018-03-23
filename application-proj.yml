@@ -10,8 +10,8 @@ server:
 spring:
   redis:
     remote: true        #是否是开启缓存
-    host: 127.0.0.1
-    port: 6379
+    host: ENC(U86eYRZZD97vmgeakA91mgEnjyDcf//8) #127.0.0.1
+    port: ENC(gUDZlAUuGtc38bq8XEjb8Q==) #6379
     password:
   http:
     multipart:
@@ -29,7 +29,7 @@ ribbon:
     enable: true
   ReadTimeout: 10000
   ConnectTimeout: 10000
-  
+
 feign:
   hystrix:
     enabled: true
@@ -55,7 +55,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
-               
+
 management:
   security:
     enabled: false
