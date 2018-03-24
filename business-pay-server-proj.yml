@@ -1,0 +1,36 @@
+server:
+  port: 2003
+
+redis:
+  cache:
+    expiration: 3600
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: ENC(YXXxUQzO2qaxX2bJzDNKZg==)
+    password: ENC(iIR6UImHnGfe4GOkWBFxtw==)
+    url: ENC(KNkvyA6UvwNKRrXZKNkL5mZ1J00Pkl+bL/CRdnN9d/FWib1x/D3r7q+/X4Ap9MOk+WHlYevku1q23nVTsgiglQxYH7SC5Dued9QY19ryGBJlidx9doLoRRFCvRmB3ojDZqtAOceqriPRFq4DLo2jAajozSoOW1hA7aYoG+ZuGTQ=)
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  rabbitmq:
+    host: ENC(U86eYRZZD97vmgeakA91mgEnjyDcf//8)
+    port: 5672
+    username: ENC(e7wHwRdme5270KAOt4vRakfj/xn3Km5E)
+    password: ENC(Lzx8NVEstZlX88Y/780BwVJ9TkFP3gFe)
+  zipkin:
+    rabbitmq:
+      queue: ENC(HyNQN/6eBtFrhxeIujZ2gQ==)
+  sleuth:
+    sampler:
+      percentage: 1.0
+
+logging:
+  config: classpath:logback.xml
