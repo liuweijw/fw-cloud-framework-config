@@ -1,5 +1,10 @@
 server:
   port: 443
+  ssl:
+    key-store: ENC(5EFcacMb1+DM70Ei0h3XMOFyh8+CBgQhcwzkHpSUNR1sdhfGGXgw/MA2jpOsv7DQ)
+    key-store-password: ENC(lvw2zfls0HqYhhfTeRE9TLJRazx1Kes2MOCzMziKuBetwnTkBevSng==)
+    keyStoreType: ENC(ap4RBwtVH57wU6hMIfMYiw==)
+    keyAlias: ENC(xTlOdsKEuQPbr8ypr6yEKauPSVMSiql5)
 
 redis:
   cache:
