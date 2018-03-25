@@ -64,4 +64,4 @@ logging:
   config: classpath:logback.xml
 
 test:
-  hellomsg: test1
+  hellomsg: test2
