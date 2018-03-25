@@ -6,6 +6,11 @@ server:
   tomcat:
     max-threads: 500
     min-spare-threads: 50
+  ssl:
+    key-store: ENC(2h6m4GEHJsI5lSeSUEQiQ4XMzWxS3r2xMlDfFKtiQWp3OfgP7G0ZfnNmyhKDAwkL)
+    key-store-password: ENC(lvw2zfls0HqYhhfTeRE9TLJRazx1Kes2MOCzMziKuBetwnTkBevSng==)
+    keyStoreType: ENC(ap4RBwtVH57wU6hMIfMYiw==)
+    keyAlias: ENC(xTlOdsKEuQPbr8ypr6yEKauPSVMSiql5)
 
 spring:
   redis:
