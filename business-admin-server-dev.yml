@@ -7,10 +7,10 @@ redis:
 
 spring:
   #datasource: # 采用分库分表，即注释这里的数据源
-    #driver-class-name:
-    #username:
-    #password:
-    #url:
+    #driver-class-name: 
+    #username: 
+    #password: 
+    #url: 
   jpa:
     database: MYSQL
     show-sql: true
@@ -36,11 +36,11 @@ spring:
 sharding:
   jdbc:
     #defaultDataSourceName: #默认数据库设置
-      #type:
-      #driver-class-name:
-      #username:
-      #password:
-      #jdbc-url:
+      #type: 
+      #driver-class-name: 
+      #username: 
+      #password: 
+      #jdbc-url: 
     datasource:
       names: ds
       ds:
@@ -62,6 +62,3 @@ sharding:
 
 logging:
   config: classpath:logback.xml
-
-test:
-  hellomsg: test2
