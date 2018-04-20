@@ -12,7 +12,7 @@ security:
       scope: server
     resource:
       jwt:
-        key-value: ENC(fmVD9Jt6YXP9Q+KBPU8/1cWgKn5WhlGuD10SzFADNz4=)
+        key-value: ENC(gAMB+ndXZhrYacre/nwOY2Kl29UekgB2q4qF3wE1p00=)
 
 logging:
   config: classpath:logback.xml
