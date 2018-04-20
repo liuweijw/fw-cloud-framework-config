@@ -3,13 +3,13 @@ server:
 
 spring:
   rabbitmq:
-    host: ENC(U86eYRZZD97vmgeakA91mgEnjyDcf//8)
+    host: ENC(jcJhwP+VV8fPYfAO5Nw1VRWkmwp6g/9i)
     port: 5672
-    username: ENC(e7wHwRdme5270KAOt4vRakfj/xn3Km5E)
-    password: ENC(Lzx8NVEstZlX88Y/780BwVJ9TkFP3gFe)
+    username: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
+    password: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
   zipkin:
     rabbitmq:
-      queue: ENC(HyNQN/6eBtFrhxeIujZ2gQ==)
+      queue: ENC(587DwkeAxTsJBQsFI4URlw==)
   sleuth:
     sampler:
       percentage: 1.0
@@ -18,7 +18,7 @@ zuul:
   ribbon:
     eager-load:
       enabled: true
-      clients: system-auth-server,business-admin-server
+      clients: system-auth-server,business-admin-server,business-pay-server,business-wechat-server
   ignoredServices: '*'
   host:
     connect-timeout-millis: 30000
@@ -34,6 +34,16 @@ zuul:
       serviceId: business-admin-server
       stripPrefix: true
       sensitiveHeaders:
+    business-pay-server:
+      path: /pay/**
+      serviceId: business-pay-server
+      stripPrefix: true
+      sensitiveHeaders:
+    business-wechat-server:
+      path: /wechat/**
+      serviceId: business-wechat-server
+      stripPrefix: false
+      sensitiveHeaders:
   ratelimit:
     key-prefix: business-ratelimite
     enabled: true
@@ -41,8 +51,8 @@ zuul:
     behind-proxy: true
     policies:
       business-admin-server:
-        limit: 300
-        quota: 2400
+        limit: 100
+        quota: 100
         refresh-interval: 3
 
 security:

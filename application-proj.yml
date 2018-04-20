@@ -10,9 +10,9 @@ server:
 spring:
   redis:
     remote: true        #是否是开启缓存
-    host: ENC(U86eYRZZD97vmgeakA91mgEnjyDcf//8)
+    host: ENC(jcJhwP+VV8fPYfAO5Nw1VRWkmwp6g/9i)
     port: 6379
-    password: ENC(PTeXGrRsjpGNJraZDhcQL16hs6lucVuMrpSnm0nMknkziK0hJAuhmePOQ4WixafhCaqhRjWwIsA=)
+    password: ENC(Ys3m6wt+Cv/dxBOU1ghaae96vJeikVerLUNvLT6r6vHHuFLaCeHXMJBL9NOSohukyGILGRthyu0=)
   http:
     multipart:
       max-file-size: 1000MB
@@ -20,15 +20,15 @@ spring:
 
 cache:
   redis:
-    expiration: 3601
+    expiration: 3600
 
 ribbon:
   Httpclient:
     enable: false
   OkHttp:
     enable: true
-  ReadTimeout: 10000
-  ConnectTimeout: 10000
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
 
 feign:
   hystrix:
@@ -52,6 +52,8 @@ hystrix:
   command:
     default:
       execution:
+        timeout:
+            enabled: false
         isolation:
           thread:
             timeoutInMilliseconds: 60000

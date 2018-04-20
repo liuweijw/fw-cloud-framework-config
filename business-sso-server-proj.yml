@@ -7,8 +7,8 @@ security:
     client:
       client-id: ENC(eZLNwFxeSKENBh1pu/M/rMMB76nxo/RLhWSaSLHa8+0=)
       client-secret: ENC(sKbpJGHz9JZmdydv1WOyAYjyXm2irxc0xYqvQ6VpF31uEw/FVNxYeA==)
-      user-authorization-uri: ENC(J10gyy41VrnmzOGMEZXA/kEEJqtBMdhNLug0OufLv8oxSL+ZKqay7dWFVIrS71LgePqeo6bvMns=)
-      access-token-uri: ENC(kyXq1abXnwfVkY9UPMlXk9lPxJ5EA2SKrCTn8K8+IvfUReOPjMt7Lc1a9Td9doHR)
+      user-authorization-uri: ENC(IgaTaOB7A2q3Svv52xhXnSQpeIMTipLONETdiEo0UemifuQ9VGQMrF6NQlGQwF33YaEJWJRszYI=)
+      access-token-uri: ENC(/PvaTLHWngi2vIHJR450dx4aQD//wNeyBrd6CVs9aibxH2dMzniL4V5aF0QphbMc)
       scope: server
     resource:
       jwt:
