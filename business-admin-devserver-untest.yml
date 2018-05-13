@@ -1,0 +1,64 @@
+server:
+  port: 2012
+
+redis:
+  cache:
+    expiration: 3600
+
+spring:
+  #datasource: # 采用分库分表，即注释这里的数据源
+    #driver-class-name:
+    #username:
+    #password:
+    #url:
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  rabbitmq:
+    host: ENC(jcJhwP+VV8fPYfAO5Nw1VRWkmwp6g/9i)
+    port: 5672
+    username: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
+    password: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
+  zipkin:
+    rabbitmq:
+      queue: ENC(587DwkeAxTsJBQsFI4URlw==)
+  sleuth:
+    sampler:
+      percentage: 1.0 #日志记录发送给采集器的概率,配置成1全量收集日志
+
+# 对分库分表的支持
+sharding:
+  jdbc:
+    #defaultDataSourceName: #默认数据库设置
+      #type:
+      #driver-class-name:
+      #username:
+      #password:
+      #jdbc-url:
+    datasource:
+      names: ds
+      ds:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        username: ENC(4UMotM7Ik00exfgsySSQQA==)
+        password: ENC(xfw5qpm1bVdSEvGSFsP+nVlfsvJaEZVJt/eDeHa4SM0=)
+        jdbc-url: ENC(wqGral6OBLsunNwWjHD0WGEkagbAxDuSAKDNqsrnMgRC/OEDCtZ6cjeURImT9nvfTBIUZBxmbVwSj6dXsrZ1BmvE89nGuvX4kwIbX1VW/SgLNrtqxg3O3B4eqMCegtB/XF80A+6CSuvMxpc6T4X2TpGU3cxY0K4Q)
+    config:
+      sharding:
+        tables:
+          t_sys_log:
+            actual-data-nodes: ds.t_sys_log_${0..1}
+            table-strategy:
+              inline:
+                sharding-column: id
+                algorithm-expression: t_sys_log_${id % 2}
+            key-generator-column-name: id
+
+logging:
+  config: classpath:logback.xml
