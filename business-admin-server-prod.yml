@@ -7,10 +7,10 @@ redis:
 
 spring:
   #datasource: # 采用分库分表，即注释这里的数据源
-    #driver-class-name: 
-    #username: 
-    #password: 
-    #url: 
+    #driver-class-name:
+    #username:
+    #password:
+    #url:
   jpa:
     database: MYSQL
     show-sql: true
@@ -20,35 +20,30 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: ENC(tbrYcuNRFv1gflhdhpuY0g==)
-    password: ENC(tbrYcuNRFv1gflhdhpuY0g==)
   zipkin:
     rabbitmq:
-      queue: zipkin
+      queue: ENC(HyNQN/6eBtFrhxeIujZ2gQ==)
   sleuth:
     sampler:
-      percentage: 1.0 #日志记录发送给采集器的概率,配置成1全量收集日志
+      percentage: 0.5
 
 # 对分库分表的支持
 sharding:
   jdbc:
     #defaultDataSourceName: #默认数据库设置
-      #type: 
-      #driver-class-name: 
-      #username: 
-      #password: 
-      #jdbc-url: 
+      #type:
+      #driver-class-name:
+      #username:
+      #password:
+      #jdbc-url:
     datasource:
       names: ds
       ds:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.jdbc.Driver
-        username: ENC(rC/X/8UBBH2bn9Tgfuu7aw==)
-        password: ENC(IVTzs5LDfVEsblAFWFgA9w==)
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/fw-cloud?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+        username: ENC(YXXxUQzO2qaxX2bJzDNKZg==)
+        password: ENC(iIR6UImHnGfe4GOkWBFxtw==)
+        jdbc-url: ENC(4K/147e4pGCoUEYB60Og76uzYynosfYyX4yC5lOOSEIlxvcQj4ETfBSg2gTuGzWMkA0oAvbLlYZH+ghTbLIgHn4lqcT1p7YTi1SpF/n/Ybsb6gfE5OMIBtd1kyGkgVz5ml+VNdeUqLTPBIyHMYd2u8iC00SrZO4M)
     config:
       sharding:
         tables:
