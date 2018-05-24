@@ -1,0 +1,19 @@
+server:
+  port: 1011
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: ENC(4UMotM7Ik00exfgsySSQQA==)
+    password: ENC(xfw5qpm1bVdSEvGSFsP+nVlfsvJaEZVJt/eDeHa4SM0=)
+    url: ENC(wqGral6OBLsunNwWjHD0WGEkagbAxDuSAKDNqsrnMgRC/OEDCtZ6cjeURImT9nvfTBIUZBxmbVwSj6dXsrZ1BmvE89nGuvX4kwIbX1VW/SgLNrtqxg3O3B4eqMCegtB/XF80A+6CSuvMxpc6T4X2TpGU3cxY0K4Q)
+
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: 47.106.144.24:5672
+      password: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
+      username: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
+      queue: ENC(587DwkeAxTsJBQsFI4URlw==)
+  storage:
+    type: mysql
