@@ -16,6 +16,11 @@ spring:
     host: ENC(jcJhwP+VV8fPYfAO5Nw1VRWkmwp6g/9i)
     port: 6379
     password: ENC(Ys3m6wt+Cv/dxBOU1ghaae96vJeikVerLUNvLT6r6vHHuFLaCeHXMJBL9NOSohukyGILGRthyu0=)
+  rabbitmq:
+    host: ENC(jcJhwP+VV8fPYfAO5Nw1VRWkmwp6g/9i)
+    port: 5672
+    username: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
+    password: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
   http:
     multipart:
       max-file-size: 1000MB
@@ -26,12 +31,15 @@ cache:
     expiration: 3600
 
 ribbon:
+  eager-load:
+    enabled: true
+    clients: system-auth-server,business-admin-server
   Httpclient:
     enable: false
   OkHttp:
     enable: true
-  ReadTimeout: 30000
-  ConnectTimeout: 30000
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
 
 feign:
   hystrix:
@@ -60,8 +68,6 @@ hystrix:
   command:
     default:
       execution:
-        timeout:
-            enabled: false
         isolation:
           thread:
             timeoutInMilliseconds: 60000

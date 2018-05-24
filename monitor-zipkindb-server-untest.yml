@@ -11,7 +11,7 @@ spring:
 zipkin:
   collector:
     rabbitmq:
-      addresses: 47.106.144.24:5672
+      addresses: 127.0.0.1:5672
       password: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
       username: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
       queue: ENC(587DwkeAxTsJBQsFI4URlw==)

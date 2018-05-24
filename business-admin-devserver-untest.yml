@@ -20,17 +20,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-  rabbitmq:
-    host: ENC(jcJhwP+VV8fPYfAO5Nw1VRWkmwp6g/9i)
-    port: 5672
-    username: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
-    password: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
   zipkin:
     rabbitmq:
       queue: ENC(587DwkeAxTsJBQsFI4URlw==)
   sleuth:
     sampler:
-      percentage: 1.0 #日志记录发送给采集器的概率,配置成1全量收集日志
+      percentage: 0.2 #日志记录发送给采集器的概率,配置成1全量收集日志
 
 # 对分库分表的支持
 sharding:
