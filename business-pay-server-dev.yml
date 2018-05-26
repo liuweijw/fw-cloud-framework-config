@@ -20,11 +20,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: ENC(tbrYcuNRFv1gflhdhpuY0g==)
-    password: ENC(tbrYcuNRFv1gflhdhpuY0g==)
   zipkin:
     rabbitmq:
       queue: zipkin
