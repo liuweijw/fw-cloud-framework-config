@@ -22,10 +22,10 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
   zipkin:
     rabbitmq:
-      queue: ENC(587DwkeAxTsJBQsFI4URlw==)
+      queue: zipkin
   sleuth:
     sampler:
-      percentage: 0.2 #日志记录发送给采集器的概率,配置成1全量收集日志
+      percentage: 0.5 #日志记录发送给采集器的概率,配置成1全量收集日志
 
 # 对分库分表的支持
 sharding:

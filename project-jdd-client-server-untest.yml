@@ -36,7 +36,7 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
   zipkin:
     rabbitmq:
-      queue: ENC(587DwkeAxTsJBQsFI4URlw==)
+      queue: zipkin
   sleuth:
     sampler:
       percentage: 0.5
