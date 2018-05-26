@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: ENC(4UMotM7Ik00exfgsySSQQA==)
     password: ENC(xfw5qpm1bVdSEvGSFsP+nVlfsvJaEZVJt/eDeHa4SM0=)
-    url: ENC(wqGral6OBLsunNwWjHD0WGEkagbAxDuSAKDNqsrnMgRC/OEDCtZ6cjeURImT9nvfTBIUZBxmbVwSj6dXsrZ1BmvE89nGuvX4kwIbX1VW/SgLNrtqxg3O3B4eqMCegtB/XF80A+6CSuvMxpc6T4X2TpGU3cxY0K4Q)
+    url: jdbc:mysql://127.0.0.1:3306/fw-cloud?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
 
 zipkin:
   collector:

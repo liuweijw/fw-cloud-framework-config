@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: ENC(4UMotM7Ik00exfgsySSQQA==)
     password: ENC(xfw5qpm1bVdSEvGSFsP+nVlfsvJaEZVJt/eDeHa4SM0=)
-    url: ENC(Wc6rM6KiojQkXLh2+P8+guJvXkPaWj9otxCpdFtxOAkWAbZSa0Nqd46UVCr8NbTkU3yZ7BTfecaBhRCu7hlCBsCR6Ywf75HGnvgta6GMYjy86MX/WHAPC8ZSwLNGTf5eIIXjP/QeUZ3jo1sUX2WaiuCYm6snOqYaLAGd49JFvvc=)
+    url: jdbc:mysql://127.0.0.1:3306/fw-cloud-wechat?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
   jpa:
     database: MYSQL
     show-sql: true
