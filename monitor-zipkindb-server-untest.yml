@@ -12,8 +12,8 @@ zipkin:
   collector:
     rabbitmq:
       addresses: 127.0.0.1:5672
-      password: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
-      username: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
+      password: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
+      username: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
       queue: ENC(587DwkeAxTsJBQsFI4URlw==)
   storage:
     type: mysql
