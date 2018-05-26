@@ -24,7 +24,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: ENC(YXXxUQzO2qaxX2bJzDNKZg==)
     password: ENC(iIR6UImHnGfe4GOkWBFxtw==)
-    url: ENC(BudzdrKGe/EO6qEGakJT3k364uGmZAFilpKXehuWR+pApqgA8oLZZaQEMbAFDN3OKJcBx0nm43FZVmEZLD6hrJ2CI63VOYoeK8Q4FghSDQl+zJLgNdSKRO/nMRazx9jEZXozdsYyJxHaR8tPsXMW98lfw2ESkY9aofxnY4bcpnw=)
+    url: jdbc:mysql://127.0.0.1:3306/business-ditu?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
   jpa:
     database: MYSQL
     show-sql: true
@@ -36,10 +36,10 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
   zipkin:
     rabbitmq:
-      queue: ENC(HyNQN/6eBtFrhxeIujZ2gQ==)
+      queue: zipkin
   sleuth:
     sampler:
-      percentage: 0.2
+      percentage: 0.5
 
 logging:
   config: classpath:logback.xml

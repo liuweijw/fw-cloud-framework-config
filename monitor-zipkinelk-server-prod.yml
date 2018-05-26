@@ -7,13 +7,13 @@ zipkin:
       addresses: 127.0.0.1:5672
       password: ENC(Lzx8NVEstZlX88Y/780BwVJ9TkFP3gFe)
       username: ENC(e7wHwRdme5270KAOt4vRakfj/xn3Km5E)
-      queue: ENC(HyNQN/6eBtFrhxeIujZ2gQ==)
+      queue: zipkin
   storage:
     type: elasticsearch
     elasticsearch:
       hosts: 127.0.0.1:9200
       cluster: elasticsearch
-      index: ENC(HyNQN/6eBtFrhxeIujZ2gQ==)
+      index: zipkin
       max-requests: 64
       index-shards: 5
       index-replicas: 1

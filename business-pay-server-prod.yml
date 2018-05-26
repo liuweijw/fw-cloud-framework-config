@@ -11,7 +11,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: ENC(YXXxUQzO2qaxX2bJzDNKZg==)
     password: ENC(iIR6UImHnGfe4GOkWBFxtw==)
-    url: ENC(KNkvyA6UvwNKRrXZKNkL5mZ1J00Pkl+bL/CRdnN9d/FWib1x/D3r7q+/X4Ap9MOk+WHlYevku1q23nVTsgiglQxYH7SC5Dued9QY19ryGBJlidx9doLoRRFCvRmB3ojDZqtAOceqriPRFq4DLo2jAajozSoOW1hA7aYoG+ZuGTQ=)
+    url: jdbc:mysql://127.0.0.1:3306/fw-cloud-pay?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
   jpa:
     database: MYSQL
     show-sql: true
@@ -23,7 +23,7 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
   zipkin:
     rabbitmq:
-      queue: ENC(HyNQN/6eBtFrhxeIujZ2gQ==)
+      queue: zipkin
   sleuth:
     sampler:
       percentage: 0.5
