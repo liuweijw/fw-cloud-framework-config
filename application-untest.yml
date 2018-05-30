@@ -13,11 +13,11 @@ spring:
     time-zone: GMT+8
   redis:
     remote: true        #是否是开启缓存
-    host: 127.0.0.1
+    host: 47.106.144.24
     port: 6379
     password: ENC(Ys3m6wt+Cv/dxBOU1ghaae96vJeikVerLUNvLT6r6vHHuFLaCeHXMJBL9NOSohukyGILGRthyu0=)
   rabbitmq:
-    host: 127.0.0.1
+    host: 47.106.144.24
     port: 5672
     username: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
     password: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
