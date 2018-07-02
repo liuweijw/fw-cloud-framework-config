@@ -15,7 +15,7 @@ spring:
     database: MYSQL
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
     properties:
       hibernate:
