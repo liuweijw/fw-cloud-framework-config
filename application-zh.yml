@@ -15,12 +15,12 @@ spring:
     remote: true        #是否是开启缓存
     host: 127.0.0.1
     port: 6379
-    password:
+    password: ENC(Ys3m6wt+Cv/dxBOU1ghaae96vJeikVerLUNvLT6r6vHHuFLaCeHXMJBL9NOSohukyGILGRthyu0=)
   rabbitmq:
     host: 127.0.0.1
     port: 5672
-    username: guest
-    password: guest
+    username: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
+    password: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
   http:
     multipart:
       max-file-size: 1000MB
@@ -38,9 +38,9 @@ ribbon:
     enable: false
   OkHttp:
     enable: true
-  ReadTimeout: 10000
-  ConnectTimeout: 10000
-  
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+
 feign:
   hystrix:
     enabled: true
@@ -71,7 +71,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
-               
+
 management:
   security:
     enabled: false

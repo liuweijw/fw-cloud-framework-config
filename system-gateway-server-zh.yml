@@ -2,27 +2,22 @@ server:
   port: 1003
 
 spring:
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
   zipkin:
     rabbitmq:
       queue: zipkin
   sleuth:
     sampler:
-      percentage: 1.0 #日志记录发送给采集器的概率,配置成1全量收集日志
+      percentage: 0.5 #日志记录发送给采集器的概率,配置成1全量收集日志
 
 zuul:
   ribbon:
     eager-load:
-      enabled: true #开启Ribbon的饥饿加载模式
-      clients: system-auth-server,business-admin-server,business-pay-server #指定需要饥饿加载的客户端名称、服务名
+      enabled: true
+      clients: system-auth-server,business-admin-server,business-pay-server,business-wechat-server
   ignoredServices: '*'
   host:
-    connect-timeout-millis: 30000
-    socket-timeout-millis: 30000
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 10000
   routes:
     system-auth-server:
       path: /auth/**
@@ -39,6 +34,11 @@ zuul:
       serviceId: business-pay-server
       stripPrefix: true
       sensitiveHeaders:
+    business-wechat-server:
+      path: /wechat/**
+      serviceId: business-wechat-server
+      stripPrefix: false
+      sensitiveHeaders:
   ratelimit:
     key-prefix: business-ratelimite
     enabled: true
@@ -48,7 +48,7 @@ zuul:
       business-admin-server:
         limit: 100
         quota: 100
-        refresh-interval: 3 #3秒内允许300个访问，平均每个请求2秒，并且要求总请求时间小于2400秒
+        refresh-interval: 3
 
 security:
   validate:
@@ -60,22 +60,10 @@ security:
       client-secret: ENC(sKbpJGHz9JZmdydv1WOyAYjyXm2irxc0xYqvQ6VpF31uEw/FVNxYeA==)
     resource:
       loadBalanced: true
-      token-info-uri: ${security.auth.server}/oauth/check-token #由资源服务器用来解码访问令牌
+      token-info-uri: ${security.auth.server}/oauth/check-token
       service-id: system-gateway-server
       jwt:
-         #key-uri: ${security.auth.server}/oauth/token_key #使用JWT令牌，RSA公开密钥可以用于令牌验证
-         key-value: ENC(fmVD9Jt6YXP9Q+KBPU8/1cWgKn5WhlGuD10SzFADNz4=)
-#security:
-#  validate:
-#    code: false
-#  sessions: stateless
-#  oauth2:
-#    resource:
-#      loadBalanced: true
-#      user-info-uri: http://system-auth-server/user
-#      prefer-token-info: false
-#      service-id: system-gateway-server
-# 上述做法将权限认证和网关解耦、建议采用RSA加密验证方式
+         key-value: ENC(gAMB+ndXZhrYacre/nwOY2Kl29UekgB2q4qF3wE1p00=)
 
 urls:
   collects:
