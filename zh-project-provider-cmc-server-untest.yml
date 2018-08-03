@@ -10,7 +10,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: ENC(4UMotM7Ik00exfgsySSQQA==)
     password: ENC(dK0EOInaxeUBKlLkyWd4IWKNfYrc9OHU)
-    url: jdbc:mysql://127.0.0.1:3306/business-zh-cmc?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    url: jdbc:mysql://120.78.74.146:3306/business-zh-cmc?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
   jpa:
     database: MYSQL
     show-sql: true
