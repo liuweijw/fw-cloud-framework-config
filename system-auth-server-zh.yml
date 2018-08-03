@@ -1,6 +1,6 @@
 server:
   port: 1004
-  
+
 spring:
   freemarker:
     allow-request-override: false
@@ -16,7 +16,7 @@ spring:
     prefer-file-system-access: true
     suffix: .ftl
     template-loader-path: classpath:/templates/
-        
+
 fw:
   auth:
     clientId: ENC(eZLNwFxeSKENBh1pu/M/rMMB76nxo/RLhWSaSLHa8+0=)

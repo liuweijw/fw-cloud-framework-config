@@ -63,7 +63,7 @@ security:
       token-info-uri: ${security.auth.server}/oauth/check-token
       service-id: system-gateway-server
       jwt:
-         key-value: ENC(gAMB+ndXZhrYacre/nwOY2Kl29UekgB2q4qF3wE1p00=)
+        key-value: ENC(IgYggZdZPj8CkZOzE2mbzN5iWamRIP/uhB6Rh0WTK/AQkKRkXVGRQA+YYkcGvmX/)
 
 urls:
   collects:
