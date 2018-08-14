@@ -70,9 +70,7 @@ urls:
     - /mobile/**
     - /auth/**
     - /admin/code/*
-    - /admin/api/info
-    - /admin/api/userTree
-    - /admin/api/dictType/*
+    - /admin/api/**
     - /swagger-resources/**
     - /swagger-ui.html
     - /*/v2/api-docs
