@@ -1,0 +1,82 @@
+jasypt:
+  encryptor:
+    password: liuweijw
+
+server:
+  tomcat:
+    max-threads: 500
+    min-spare-threads: 50
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    remote: true        #是否是开启缓存
+    host: 47.106.98.152
+    port: 6379
+    password: ENC(Ys3m6wt+Cv/dxBOU1ghaae96vJeikVerLUNvLT6r6vHHuFLaCeHXMJBL9NOSohukyGILGRthyu0=)
+  rabbitmq:
+    host: 47.106.98.152
+    port: 5672
+    username: ENC(t1i+4uELN+o7PZQ9MCTKHOWIUkCY4rL6)
+    password: ENC(OmhRNBSPvefBvk7JGk7cEPC4Lk912Cfb)
+  http:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+
+cache:
+  redis:
+    expiration: 3600
+
+ribbon:
+  eager-load:
+    enabled: true
+    clients: system-pay-server,business-wechat-server
+  Httpclient:
+    enable: false
+  OkHttp:
+    enable: true
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+
+feign:
+  hystrix:
+    enabled: true
+  okhttp:
+    enable: true
+  httpclient:
+    enable: false
+  client:
+    config:
+      feignName:
+        connectTimeout: 30000
+        readTimeout: 30000
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 500
+      maxQueueSize: 1000
+      queueSizeRejectionThreshold: 800
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+management:
+  security:
+    enabled: false
+endpoints:
+  actuator:
+    enabled: true
+  shutdown:
+    enabled: false
