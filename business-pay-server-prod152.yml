@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: ENC(4UMotM7Ik00exfgsySSQQA==)
     password: ENC(xfw5qpm1bVdSEvGSFsP+nVlfsvJaEZVJt/eDeHa4SM0=)
-    url: jdbc:mysql://47.106.98.152:3306/fw-cloud-pay?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    url: jdbc:mysql://120.78.140.75:3306/fw-cloud-pay?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
   jpa:
     database: MYSQL
     show-sql: true
