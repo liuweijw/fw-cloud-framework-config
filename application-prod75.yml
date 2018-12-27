@@ -33,7 +33,7 @@ cache:
 ribbon:
   eager-load:
     enabled: true
-    clients: system-pay-server,business-wechat-server
+    clients: system-auth-server,business-admin-server,business-pay-server,business-wechat-server
   Httpclient:
     enable: false
   OkHttp:

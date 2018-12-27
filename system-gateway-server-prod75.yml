@@ -1,0 +1,88 @@
+server:
+  port: 1003
+
+spring:
+  zipkin:
+    rabbitmq:
+      queue: zipkin
+  sleuth:
+    sampler:
+      percentage: 0.5
+
+zuul:
+  ribbon:
+    eager-load:
+      enabled: true
+      clients: system-auth-server,business-admin-server,business-pay-server,business-wechat-server
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  routes:
+    system-auth-server:
+      path: /auth/**
+      serviceId: system-auth-server
+      stripPrefix: true
+      sensitiveHeaders:
+    business-admin-server:
+      path: /admin/**
+      serviceId: business-admin-server
+      stripPrefix: true
+      sensitiveHeaders:
+    business-pay-server:
+      path: /pay/**
+      serviceId: business-pay-server
+      stripPrefix: true
+      sensitiveHeaders:
+    business-wechat-server:
+      path: /wechat/**
+      serviceId: business-wechat-server
+      stripPrefix: false
+      sensitiveHeaders:
+  ratelimit:
+    key-prefix: business-ratelimite
+    enabled: true
+    repository: REDIS
+    behind-proxy: true
+    policies:
+      business-admin-server:
+        limit: 100
+        quota: 100
+        refresh-interval: 3
+
+security:
+  validate:
+    code: false
+  sessions: stateless
+  oauth2:
+    client:
+      client-id: ENC(eZLNwFxeSKENBh1pu/M/rMMB76nxo/RLhWSaSLHa8+0=)
+      client-secret: ENC(sKbpJGHz9JZmdydv1WOyAYjyXm2irxc0xYqvQ6VpF31uEw/FVNxYeA==)
+    resource:
+      loadBalanced: true
+      token-info-uri: ${security.auth.server}/oauth/check-token
+      service-id: system-gateway-server
+      jwt:
+         key-value: ENC(IgYggZdZPj8CkZOzE2mbzN5iWamRIP/uhB6Rh0WTK/AQkKRkXVGRQA+YYkcGvmX/)
+
+urls:
+  collects:
+    - /mobile/**
+    - /auth/**
+    - /ditu/icemap/**
+    - /ditu/pay/**
+    - /ditu/css/**
+    - /ditu/images/**
+    - /ditu/js/**
+    - /admin/code/*
+    - /admin/api/info
+    - /admin/api/userTree
+    - /admin/api/dictType/*
+    - /swagger-resources/**
+    - /swagger-ui.html
+    - /*/v2/api-docs
+    - /swagger/api-docs
+    - /webjars/**
+
+logging:
+  config: classpath:logback.xml
