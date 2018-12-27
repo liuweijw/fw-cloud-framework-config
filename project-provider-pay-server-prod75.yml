@@ -1,16 +1,12 @@
 server:
-  port: 2003
-
-redis:
-  cache:
-    expiration: 3600
+  port: 4004
 
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: ENC(rC/X/8UBBH2bn9Tgfuu7aw==)
-    password: ENC(IVTzs5LDfVEsblAFWFgA9w==)
-    url: jdbc:mysql://127.0.0.1:3306/fw-cloud-pay?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: ENC(4UMotM7Ik00exfgsySSQQA==)
+    password: ENC(xfw5qpm1bVdSEvGSFsP+nVlfsvJaEZVJt/eDeHa4SM0=)
+    url: jdbc:mysql://120.78.140.75:3306/business-jdd-pay?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
   jpa:
     database: MYSQL
     show-sql: true
@@ -25,7 +21,7 @@ spring:
       queue: zipkin
   sleuth:
     sampler:
-      percentage: 1.0
+      percentage: 0.5
 
 logging:
   config: classpath:logback.xml
